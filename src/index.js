@@ -1,19 +1,21 @@
+//import json from 'express';
 const express = require('express');
 const morgan = require('morgan');
+//import express from 'express';
+//import morgan from 'morgan';
+const cors = require('cors');
 
+//import './database.js';
 require('./database');
-
 const app = express();
 
 app.set('port', 5000);
-
+app.use(cors());
 app.use(morgan('dev'))
 app.use(express.json())
 
-
-app.use('/api/products',require('./routes/products.routes'));
-
+app.use('/api/productos',require('./routes/productos.routes'));
 
 app.listen(app.get('port'),()=>{
-    console.log("Server on port ",app.get('port'));
+    console.log("Server on port ",app.get('port'))
 })
