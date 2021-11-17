@@ -1,6 +1,3 @@
-//import mongoose, { Schema as _Schema, model } from 'mongoose';
-//const {Schema} = mongoose;
-
 const mongoose = require('mongoose')
 const {Schema} = mongoose;
 
